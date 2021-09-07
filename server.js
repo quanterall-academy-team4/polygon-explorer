@@ -3,10 +3,6 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-app.set('view engine', 'html');
-
-app.engine('html', require('ejs').renderFile);
-
 app.get('/',function(req,res) {
     res.end('Hello World!')
 });
