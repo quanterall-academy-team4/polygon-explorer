@@ -43,7 +43,7 @@ app.get('/account=:hash', (req, res) => {
     })
 })
 
-app.get('/transaction/:hash', (req, res) => {
+app.get('/transaction=:hash', (req, res) => {
     web3.eth.getTransaction(req.params.hash).then((value) => {
         res.json(value);
     });
@@ -56,4 +56,5 @@ app.get('/', function (req, res) {
 app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
 });
+
 
