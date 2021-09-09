@@ -16,8 +16,14 @@ app.get('/block=:arg', (req, res) => {
     })
 });
 
+app.get('/block=latest'), (req, res) => {
+    web3.eth.getBlock('latest', true, (error, result) => {}).then(value => {
+        res.json(value);
+    })
+};
+
 // fetch Y blocks after X blocks are skipped (most recent block first)
-app.get('/blocks/from=:from&count=:count', (req, res) => {
+app.get('/block/from=:from&count=:count', (req, res) => {
     web3.eth.getBlock('latest', false, (error, result) => {}).then((value) => {
         const startBlockNumber = value.number - req.params.from; // get latest block number for calculations
         const blockCount = req.params.count;
@@ -37,7 +43,7 @@ app.get('/blocks/from=:from&count=:count', (req, res) => {
 });
 
 // Returns address balance
-app.get('/account=:hash', (req, res) => {
+app.get('/address=:hash', (req, res) => {
     web3.eth.getBalance(req.params.hash).then(value => {
         res.end(web3.utils.fromWei(value));
     })
@@ -47,6 +53,18 @@ app.get('/transaction=:hash', (req, res) => {
     web3.eth.getTransaction(req.params.hash).then((value) => {
         res.json(value);
     });
+});
+
+app.get('/transactions/pending', (req, res) => {
+    web3.eth.getPendingTransactions().then((value) => {
+        res.json(value);
+    })
+});
+
+app.get('/transactions/address=:address', (req, res) => {
+    web3.eth.getTransactionCount(req.params.address).then((value) => {
+        res.json(value);
+    })
 });
 
 app.get('/', function (req, res) {
