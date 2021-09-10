@@ -13,7 +13,7 @@ exports.getLatestBlock = (req, res) => {
     }).then(value => {
         res.json(value);
     });
-}
+};
 
 exports.getMultipleBlocksAfterThreshold = (req, res) => {
     web3.eth.getBlock('latest', false, (error, result) => {}).then((value) => {
@@ -32,5 +32,12 @@ exports.getMultipleBlocksAfterThreshold = (req, res) => {
             })
         }
     })
+};
+
+exports.getPendingBlocks = (req, res) => {
+    web3.eth.getBlock('pending', true, (error, result) => { // TO DO: handle error
+    }).then(value => {
+        res.json(value);
+    });
 };
 

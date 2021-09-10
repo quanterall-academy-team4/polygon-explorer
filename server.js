@@ -9,7 +9,8 @@ const transactionRoutes = require('./routes/transactions.js');
 const blockRoutes = require('./routes/blocks');
 const addressRoutes = require('./routes/addresses');
 
-const web3 = new Web3('https://polygon-rpc.com/');
+//const web3 = new Web3('https://polygon-rpc.com/');
+const web3 = new Web3('ws://heimdalld:26657');
 
 app.use("/transactions/", transactionRoutes);
 app.use("/blocks", blockRoutes);
