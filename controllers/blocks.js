@@ -4,6 +4,7 @@ const web3 = new Web3('https://polygon-rpc.com/');
 exports.getBlockByNumberOrHash = (req, res) => {
     web3.eth.getBlock(req.params.arg, true, (error, result) => { // TO DO: handle error
     }).then(value => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.json(value);
     });
 };
@@ -11,7 +12,8 @@ exports.getBlockByNumberOrHash = (req, res) => {
 exports.getLatestBlock = (req, res) => {
     web3.eth.getBlock('latest', true, (error, result) => { // TO DO: handle error
     }).then(value => {
-        res.json(value);
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.end(value);
     });
 };
 
@@ -27,6 +29,7 @@ exports.getMultipleBlocksAfterThreshold = (req, res) => {
                 fetchedBlocks.push(value);
 
                 if (i == startBlockNumber - blockCount) {
+                    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
                     res.end(JSON.stringify(fetchedBlocks));
                 }
             })
@@ -37,6 +40,7 @@ exports.getMultipleBlocksAfterThreshold = (req, res) => {
 exports.getPendingBlocks = (req, res) => {
     web3.eth.getBlock('pending', true, (error, result) => { // TO DO: handle error
     }).then(value => {
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080/blocks');
         res.json(value);
     });
 };
