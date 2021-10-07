@@ -5,8 +5,12 @@ const app = express();
 const PORT = 3000;
 const Web3 = require('web3');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 app.use(cors()); // configure cors origins
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const transactionRoutes = require('./routes/transactions.js');
 const blockRoutes = require('./routes/blocks');
