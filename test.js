@@ -6,6 +6,20 @@ const swaggerDocument = require('./swagger.json');
 jestOpenAPI(swaggerDocument);
 
 
+jest.setTimeout(20000);
+describe('GET /', () => {
+  it('should satisfy OpenAPI spec', async () => {
+   
+    
+    const res = await axios.get('http://localhost:3000/');
+
+    expect(res.status).toEqual(200);
+
+    
+    expect(res.data).toEqual("Hello World!");
+    
+  });
+});
 
 describe('GET /blocks/latest', () => {
     it('should satisfy OpenAPI spec', async () => {
@@ -19,13 +33,13 @@ describe('GET /blocks/latest', () => {
       expect(res).toSatisfyApiSpec();
       
     });
-  });
+  }); 
 
-  describe('GET /blocks/:arg', () => {
+  describe('GET /blocks/ByNumber/OrHash/:arg', () => {
     it('should satisfy OpenAPI spec', async () => {
      
       
-      const res = await axios.get('http://localhost:3000/blocks/1000');
+      const res = await axios.get('http://localhost:3000/blocks/ByNumber/OrHash/1000');
   
       expect(res.status).toEqual(200);
   
@@ -59,10 +73,12 @@ describe('GET /blocks/latest', () => {
   
       
       expect(res).toSatisfyApiSpec();
+     
       
     });
-  });
-  jest.setTimeout(10000);
+  });  
+
+ 
    describe('GET /transactions/hash/{hash}', () => {
     it('should satisfy OpenAPI spec', async () => {
      
@@ -76,8 +92,8 @@ describe('GET /blocks/latest', () => {
       
     });
   });
-  jest.setTimeout(20000);
-  describe('GET /transactions/pending', () => {
+ 
+  describe('GET /transactions/pending/', () => {
     it('should satisfy OpenAPI spec', async () => {
      
       
@@ -104,7 +120,7 @@ describe('GET /blocks/latest', () => {
       
     });
   });
-
+  
   describe('GET /transactions/latest', () => {
     it('should satisfy OpenAPI spec', async () => {
      

@@ -41,7 +41,7 @@
         }
       }
     },
-    "/blocks/{arg}": {
+    "/blocks/ByNumber/OrHash/{arg}": {
       "get": {
         "tags": [
           "Blocks"
@@ -55,7 +55,15 @@
             "style": "form",
             "explode": true,
             "schema": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+             
             }
           }
         ],
