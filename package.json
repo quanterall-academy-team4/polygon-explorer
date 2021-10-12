@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest --coverage --forceExit",
+    "test": "jest --coverage --forceExit --runInBand",
     "test2": "mocha ./test/* --exit",
     "configure": "NODE_PATH = ./node_modules",
     "start": "nodemon server.js"

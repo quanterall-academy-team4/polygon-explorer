@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633681891872" clover="3.2.0">
-  <project timestamp="1633681891873" name="All files">
+<coverage generated="1634024514707" clover="3.2.0">
+  <project timestamp="1634024514707" name="All files">
     <metrics statements="91" coveredstatements="91" conditionals="2" coveredconditionals="2" methods="28" coveredmethods="28" elements="121" coveredelements="121" complexity="0" loc="91" ncloc="91" packages="3" files="7" classes="7"/>
     <package name="polygon-explorer-backend">
       <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="server.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\server.js">
+      <file name="server.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\server.js">
         <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -28,25 +28,25 @@
         <line num="27" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
       </file>
     </package>
     <package name="polygon-explorer-backend.controllers">
       <metrics statements="47" coveredstatements="47" conditionals="2" coveredconditionals="2" methods="26" coveredmethods="26"/>
-      <file name="addresses.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\controllers\addresses.js">
+      <file name="addresses.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\controllers\addresses.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
       </file>
-      <file name="blocks.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\controllers\blocks.js">
+      <file name="blocks.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\controllers\blocks.js">
         <metrics statements="25" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="14" coveredmethods="14"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
@@ -69,18 +69,18 @@
         <line num="43" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
       </file>
-      <file name="transactions.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\controllers\transactions.js">
+      <file name="transactions.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\controllers\transactions.js">
         <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
@@ -92,7 +92,7 @@
     </package>
     <package name="polygon-explorer-backend.routes">
       <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="addresses.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\routes\addresses.js">
+      <file name="addresses.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\routes\addresses.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -100,7 +100,7 @@
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
       </file>
-      <file name="blocks.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\routes\blocks.js">
+      <file name="blocks.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\routes\blocks.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -111,7 +111,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
-      <file name="transactions.js" path="C:\Users\bojko\Desktop\polygon\polygon-explorer-backend\routes\transactions.js">
+      <file name="transactions.js" path="C:\Users\alper\Desktop\quanterall-materials\blockchain-course\polygon-explorer-backend\routes\transactions.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
