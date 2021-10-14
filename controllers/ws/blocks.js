@@ -1,8 +1,7 @@
-const { resolve } = require('path/posix');
 const Web3 = require('web3');
 const web3 = new Web3('https://polygon-rpc.com/');
 
-exports.returnlatestBlock = (wsClient) => {
+exports.returnLatestBlock = (wsClient) => {
     web3.eth.getBlock('latest', true, (error, result) => { // TO DO: handle error
     }).then(value => {
         wsClient.sendUTF(JSON.stringify(value));

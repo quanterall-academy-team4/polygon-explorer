@@ -5,7 +5,7 @@ const http = require('http');
 const WebSocketServer = require('websocket').server;
 const Web3 = require('web3');
 const cors = require('cors');
-const blocksController = require('./controllers/ws/blocks.js');
+const wsPathResolver = require ('./utils/wspathresolver.js');
 
 const app = express();
 const PORT = 3000;
@@ -49,41 +49,7 @@ wsServer.on('request', function(request) {
 
     connection.on('message', function(message) {
       const parsedMessage = message.utf8Data.split("/");
-      
-      /*
-        Available paths:
-
-        blocks/latest,
-        blocks/{arg},
-        blocks/pending,
-        blocks/from=arg1&count=arg2
-
-      */
-      if (parsedMessage[0] === "blocks"){
-          if (parsedMessage[1] === "latest"){
-              blocksController.returnLatestBlock(connection);
-          } else if (parsedMessage[1] !== "from"){
-              blocksController.returnBlockByNumberOrHash(connection, parsedMessage[1]);
-          } else if (parsedMessage[1] === pending){
-              blocksController.returnPendingBlocks(connection);
-          } else {
-              // try split parsedMessage[1] to see if it is a valid from=arg1&count=arg2 path
-              const pathSegments = parsedMessage[1].split("&");
-
-              // valid path
-              if (pathSegments.length == 2){
-                // pathSegments[0] = from=arg1 ; extract argument
-                const arg1 = pathSegments[0].split("=");
-                const arg2 = pathSegments[1].split("=");
-
-                if (arg1.length == 2 && arg2.length == 2){
-                    blocksController.returnMultipleBlocksAfterThreshold(connection, arg1[1], arg2[1]);
-                }
-              } else {
-                    blocksController.returnInvalidInput(connection);
-              }
-          }
-      }
+      wsPathResolver.resolvePath(connection, parsedMessage);
     });
 
     connection.on('close', function(reasonCode, description) {
