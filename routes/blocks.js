@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const BlocksController = require('../controllers/blocks');
+const BlocksController = require('../controllers/http/blocks');
 
 // router.get('/', () => {});
 router.get('/:arg', BlocksController.getBlockByNumberOrHash);

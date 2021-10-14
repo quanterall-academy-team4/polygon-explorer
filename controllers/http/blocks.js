@@ -2,7 +2,7 @@ const Web3 = require('web3');
 const web3 = new Web3('https://polygon-rpc.com/');
 
 exports.getBlockByNumberOrHash = (req, res) => {
-    web3.eth.getBlock(req.params.arg, true, (error, result) => { // TO DO: handle error
+    web3.eth.getBlock(req.params.arg, true, (error, result) => { 
     }).then(value => {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.json(value);

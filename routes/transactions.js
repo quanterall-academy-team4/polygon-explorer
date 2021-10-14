@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const TransactionsController = require('../controllers/transactions');
+const TransactionsController = require('../controllers/http/transactions');
 
 // router.get("/", () => {}));
 router.get("/hash=:hash", TransactionsController.getTransactionsByHash);
