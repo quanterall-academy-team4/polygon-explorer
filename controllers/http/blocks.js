@@ -13,7 +13,7 @@ exports.getLatestBlock = (req, res) => {
     web3.eth.getBlock('latest', true, (error, result) => { // TO DO: handle error
     }).then(value => {
         res.setHeader('Access-Control-Allow-Origin', '*');
-        res.end(value);
+        res.json(value);
     });
 };
 

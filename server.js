@@ -9,8 +9,12 @@ const blocksController = require('./controllers/ws/blocks.js');
 
 const app = express();
 const PORT = 3000;
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 app.use(cors()); // configure cors origins
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const transactionRoutes = require('./routes/transactions.js');
 const blockRoutes = require('./routes/blocks');
@@ -86,3 +90,4 @@ wsServer.on('request', function(request) {
         console.log('Client has disconnected.');
     });
 });
+module.exports = app;
