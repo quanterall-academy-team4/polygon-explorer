@@ -21,7 +21,7 @@ const blockRoutes = require('./routes/blocks');
 const addressRoutes = require('./routes/addresses');
 
 const web3 = new Web3('https://polygon-rpc.com/');
-//const web3 = new Web3(new Web3.providers.IpcProvider('/data/polygon/bor/geth.ipc', require('net')));
+//const web3 = new Web3('wss://polygon-node-local:8146');
 
 app.use("/transactions", transactionRoutes);
 app.use("/blocks", blockRoutes);

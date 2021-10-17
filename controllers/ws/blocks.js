@@ -40,7 +40,3 @@ exports.returnMultipleBlocksAfterThreshold = (wsClient, from, count) => {
         }
     });
 };
-
-exports.returnInvalidInput = (wsClient) => {
-    wsClient.sendUTF("Invalid path.");
-}

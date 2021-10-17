@@ -29,7 +29,3 @@ exports.returnTransactionsCountByAddress = (WSClient, address) => {
         WSClient.sendUTF(JSON.stringify(value));
     })
 };
-
-exports.returnInvalidInput = (WSClient) => {
-    WSClient.sendUTF("Invalid path.");
-}

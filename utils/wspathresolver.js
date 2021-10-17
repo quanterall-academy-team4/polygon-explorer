@@ -8,7 +8,7 @@ exports.resolvePath = (connection, parsedMessage) => {
             blocksController.returnLatestBlock(connection);
         } else if (parsedMessage[1] !== "from"){
             blocksController.returnBlockByNumberOrHash(connection, parsedMessage[1]);
-        } else if (parsedMessage[1] === pending){
+        } else if (parsedMessage[1] === "pending"){
             blocksController.returnPendingBlocks(connection);
         } else {
             // try split parsedMessage[1] to see if it is a valid from=arg1&count=arg2 path
@@ -24,7 +24,7 @@ exports.resolvePath = (connection, parsedMessage) => {
                   blocksController.returnMultipleBlocksAfterThreshold(connection, arg1[1], arg2[1]);
               }
             } else {
-                  blocksController.returnInvalidInput(connection);
+                  this.returnInvalidInput(connection);
             }
         }
     } else if (parsedMessage[0] === "transactions"){
@@ -34,7 +34,7 @@ exports.resolvePath = (connection, parsedMessage) => {
               if (parsedMessage.length === 3){
                   transactionsController.returnTransactionByHash(connection, parsedMessage[2]);
               } else {
-                  transactionsController.returnInvalidInput(connection);
+                  this.returnInvalidInput(connection);
               }
           } else if (parsedMessage[1] === "pending"){
                   transactionsController.returnPendingTransactions(connection);
@@ -42,12 +42,16 @@ exports.resolvePath = (connection, parsedMessage) => {
               if (parsedMessage.length === 3){
                   transactionsController.returnTransactionsCountByAddress(connection, parsedMessage[2]);
               } else {
-                  transactionsController.returnInvalidInput(connection);
+                  this.returnInvalidInput(connection);
               }
           } else {
-              transactionsController.returnInvalidInput(connection);
+              this.returnInvalidInput(connection);
           }
     } else if (parsedMessage[0] === "addresses"){
           addressesController.returnAccountBalance(connection, parsedMessage[1]);
     }
-}
+};
+
+const returnInvalidInput = (connection) => {
+    connection.sendUTF("Invalid path.");
+};
